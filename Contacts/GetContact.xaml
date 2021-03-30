@@ -1,0 +1,33 @@
+﻿<Window x:Class="Contacts.GetContact"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Contacts"
+        mc:Ignorable="d"
+        Title="GetContact" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+        <StackPanel DataContext="{Binding Contact}">
+            <TextBlock Text="Имя:" Height="Auto"/>
+            <TextBox Text="{Binding Name}" Height="Auto"/>
+            <TextBlock Text="Адрес:" Height="Auto"/>
+            <TextBox Text="{Binding Adress}" Height="Auto"/>
+            <TextBlock Text="День рождения:" Height="Auto"/>
+            <TextBox Text="{Binding DateOfBirth}" Height="Auto"/>
+            <TextBlock Text="Номер телефона:" Height="Auto"/>
+            <TextBox Text="{Binding NumOfTele}" Height="Auto"/>
+                <ComboBox SelectedItem="{Binding PhoneType}">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="Мобильный" Tag="0"/>
+                        <ComboBoxItem Content="Городской" Tag="1"/>
+                    </ComboBox.Items>
+                </ComboBox>
+            <TextBlock Text="Никнейм" Width="Auto" Height="Auto"/>
+            <TextBox Text="{Binding NickName}" Width="Auto"/>
+            </StackPanel>
+        <Button Content="Сохранить" Command="{Binding SaveContact}" Height="Auto" Width="200" Margin="0 5 0 0"/>
+    </StackPanel>
+    </Grid>
+    
+</Window>
